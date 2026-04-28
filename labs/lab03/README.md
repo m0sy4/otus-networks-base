@@ -28,22 +28,37 @@
 
 ![alt text](content/p1/problem.png)
 
+![alt text](content/p1/solution.png)
+
 ### Проблема2
 
 ![alt text](content/p2/problem.png)
+
+![alt text](content/p2/solution.png)
 
 ### Проблема3
 
 ![alt text](content/p3/problem.png)
 
+![alt text](content/p3/solution.png)
+
 ### Проблема4
 
 ![alt text](content/p4/problem.png)
+
+![alt text](content/p4/solution.png)
 
 ### Проблема5
 
 ![alt text](content/p5/problem.png)
 
+![alt text](content/p5/solution.png)
+
 ### Проблема6
 
 ![alt text](content/p6/problem.png)
+
+![alt text](content/p6/solution.png)
+
+Маска подсети важна, потому что сам по себе IPv4-адрес не показывает, где заканчивается часть сети и начинается часть узла.
+Маска подсети нужна для того, чтобы правильно определить границы сети и понять, какие адреса относятся к одной подсети.

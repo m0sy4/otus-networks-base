@@ -71,6 +71,7 @@
 ![alt text](p3/s4/2.png)
 
 ![alt text](p3/s4/3.png)
+
 Примечание: в CPT невозможно прописать команду switchport port-security aging inactivity т.к. отсутсвует такой параметр.
 
 ![alt text](p3/s4/4.png)

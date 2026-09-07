@@ -129,3 +129,66 @@
 ![alt text](p3/s5/5.png)
 
 ![alt text](p3/s5/6.png)
+
+## Часть 4. Настройка DHCPv4
+
+![alt text](p4/1.png)
+
+### Шаг 1. Исключение служебных адресов и создание пулов на R1
+
+![alt text](p4/s1/1.png)
+
+### Шаг 2. Исключение служебных адресов и создание пулов на R2
+
+![alt text](p4/s2/1.png)
+
+### Шаг 3. Настройка ПК
+
+![alt text](p4/s3/1.png)
+
+![alt text](p4/s3/2.png)
+
+DHCP включен на PC-B — PC-G
+
+### Шаг 4. Проверка адресов ПК
+
+![alt text](p4/s4/1.png)
+
+![alt text](p4/s4/2.png)
+
+### Шаг 5. Проверка DHCP на R1 и R2
+
+![alt text](p4/s5/1.png)
+
+![alt text](p4/s5/2.png)
+
+### Шаг 6. Ping шлюзов с ПК
+
+![alt text](p4/s6/1.png)
+
+![alt text](p4/s6/2.png)
+
+![alt text](p4/s6/3.png)
+
+![alt text](p4/s6/4.png)
+
+![alt text](p4/s6/5.png)
+
+![alt text](p4/s6/6.png)
+
+![alt text](p4/s6/7.png)
+
+### Шаг 7. Ping между ПК
+
+PC-B → PC-E
+
+VLAN30 → VLAN40
+
+![alt text](p4/s7/1.png)
+
+
+PC-F → PC-G
+
+VLAN120 → VLAN140
+
+![alt text](p4/s7/2.png)

@@ -94,3 +94,38 @@
 
 ![alt text](p2/s7/3.png)
 
+## Часть 3. Настройка IPv4 и Router-on-a-Stick
+
+### Шаг 1. Настройка интерфейсов на R1
+
+![alt text](p3/s1/1.png)
+
+### Шаг 2. Настройка интерфейсов на R2
+
+![alt text](p3/s2/1.png)
+
+### Шаг 3. Настройка интерфейсов на R3
+
+![alt text](p3/s3/1.png)
+
+### Шаг 4. Настрйока Management VLAN на коммутаторах
+
+![alt text](p3/s4/1.png)
+
+![alt text](p3/s4/2.png)
+
+![alt text](p3/s4/3.png)
+
+### Шаг 5. Проверки сетевой связанности маршрутизаторов и коммутаторов
+
+![alt text](p3/s5/1.png)
+
+![alt text](p3/s5/2.png)
+
+![alt text](p3/s5/3.png)
+
+![alt text](p3/s5/4.png)
+
+![alt text](p3/s5/5.png)
+
+![alt text](p3/s5/6.png)

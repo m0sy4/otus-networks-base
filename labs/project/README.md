@@ -192,3 +192,93 @@ PC-F → PC-G
 VLAN120 → VLAN140
 
 ![alt text](p4/s7/2.png)
+
+
+## Часть 5. Настройка IPv6, SLAAC и DHCPv6
+
+![alt text](p5/1.png)
+
+### Шаг 1. IPv6-маршрутизация на R1 и R2
+
+![](p5/s1/1.png)
+
+![alt text](p5/s1/2.png)
+
+### Шаг 2. Настройка адресов IPv6, VLAN и DHCPv6 на R1
+
+![alt text](p5/s2/1.png)
+
+### Шаг 3. Настройка адресов IPv6, VLAN и DHCPv6 на R2
+
+![alt text](p5/s3/1.png)
+
+### Шаг 4. Ping R1 <-> R2 по IPv6
+
+![alt text](p5/s4/1.png)
+
+![alt text](p5/s4/2.png)
+
+### Шаг 5. Настройка SLAAC на ПК
+
+PC-B
+![alt text](p5/s5/1.png)
+
+
+PC-C
+![alt text](p5/s5/2.png)
+
+PC-E
+![alt text](p5/s5/3.png)
+
+PC-G
+![alt text](p5/s5/4.png)
+
+### Шаг 6. Настройка DHCPv6 на ПК
+
+PC-A
+![alt text](p5/s6/1.png)
+
+PC-D 
+![alt text](p5/s6/2.png)
+
+PC-F 
+![alt text](p5/s6/3.png)
+
+
+
+### Шаг 7. Проверка DHCPv6 на маршрутизаторах
+
+![alt text](p5/s7/1.png)
+
+![alt text](p5/s7/2.png)
+
+### Шаг 8. Проверка связи ПК со шлюзом
+
+![alt text](p5/s8/1.png)
+
+![alt text](p5/s8/2.png)
+
+![alt text](p5/s8/3.png)
+
+![alt text](p5/s8/4.png)
+
+### Шаг 9. Проверка связи между ПК из разных VLAN
+
+PC-B → PC-A
+
+VLAN30 → VLAN20
+
+![alt text](p5/s9/1.png)
+
+PC-F → PC-G
+
+VLAN120 → VLAN140
+
+![alt text](p5/s9/2.png)
+
+### Шаг 10.  Проверка таблиц IPv6-маршрутизации
+
+![alt text](p5/s10/1.png)
+
+![alt text](p5/s10/2.png)
+

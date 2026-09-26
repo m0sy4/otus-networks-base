@@ -244,8 +244,6 @@ PC-D
 PC-F 
 ![alt text](p5/s6/3.png)
 
-
-
 ### Шаг 7. Проверка DHCPv6 на маршрутизаторах
 
 ![alt text](p5/s7/1.png)
@@ -282,3 +280,245 @@ VLAN120 → VLAN140
 
 ![alt text](p5/s10/2.png)
 
+## Часть 6. Статическая и динамическая маршрутизация
+
+Логика маршрутизации
+
+               209.165.200.1
+                  R3 Lo1
+                    |
+                    |
+                   R3
+              209.165.200.225
+                    |
+            Static Default Route
+                    |
+              209.165.200.230
+                   R1
+                    |
+              10.255.0.1
+                    |
+                OSPF Area 0
+                    |
+              10.255.0.2
+                   R2
+
+### Шаг 1. Статический маршрут по умолчанию на R1
+
+![alt text](p6/s1/1.png)
+
+### Шаг 2. Настройка OSPF на R1
+
+OSPF process ID = 56
+
+Area = 0
+
+Router ID R1 = 1.1.1.1
+
+Router ID R2 = 2.2.2.2
+
+![alt text](p6/s2/1.png)
+
+
+###  Шаг 3. Отключение OSPF Hello-пакеты в пользовательских VLAN
+
+![alt text](p6/s3/1.png)
+
+###  Шаг 4. Маршрут по умолчанию через OSPF
+
+![alt text](p6/s4/1.png)
+
+### Шаг 5. Настройте OSPF на R2
+
+![alt text](p6/s5/1.png)
+
+### Шаг 6. Проверка OSPF-маршрутов на маршрутизаторах
+
+![alt text](p6/s6/1.png)
+
+![alt text](p6/s6/2.png)
+
+### Шаг 7. Проверка маршрутизации на ПК
+
+HQ → Branch
+
+PC-B → PC-F
+
+![alt text](p6/s7/1.png)
+
+Branch → HQ
+
+PC-F → PC-A
+
+![alt text](p6/s7/2.png)
+
+### Шаг 8. Настройка IPv6-маршрутизации на R1/R2
+
+![alt text](p6/s8/1.png)
+
+![alt text](p6/s8/2.png)
+
+![alt text](p6/s8/3.png)
+
+![alt text](p6/s8/4.png)
+
+### Шаг 9. Проверка IPv6-маршрутизации на ПК
+
+HQ → Branch
+
+PC-B → PC-F
+
+![alt text](p6/s9/1.png)
+
+Branch → HQ
+
+PC-F → IPv6-шлюз VLAN 30 HQ
+
+![alt text](p6/s9/2.png)
+
+
+### Шаг 10. Итоговая проверка OSPF
+
+![alt text](p6/s10/1.png)
+
+![alt text](p6/s10/2.png)
+
+
+## Часть 7. ACL
+
+### Шаг 1. Определение политик безопасности
+
+| № | Источник | Назначение | Политика |
+|---:|---|---|---|
+| 1 | HQ Guest VLAN 40 | Все корпоративные IPv4-сети | **Deny** |
+| 2 | Branch Guest VLAN 140 | Все корпоративные IPv4-сети | **Deny** |
+| 3 | HQ Guest / Branch Guest | Internet | **Permit** |
+| 4 | HQ Users VLAN 30 | Management VLAN 10 и 110 по SSH | **Deny TCP/22** |
+| 5 | Branch Users VLAN 120 | Management VLAN 10 и 110 по SSH | **Deny TCP/22** |
+| 6 | Administration VLAN 20 | Management | **Permit** |
+| 7 | Остальной пользовательский трафик | Разрешённые сети | **Permit** |
+
+### Шаг 2. ACL для HQ Guest
+
+![alt text](p7/s2/1.png)
+
+### Шаг 3. ACL для HQ Users
+
+![alt text](p7/s3/1.png)
+
+### Шаг 4. ACL для Branch Guest
+
+![alt text](p7/s4/1.png)
+
+### Шаг 5. ACL для Branch Users
+
+![alt text](p7/s5/1.png)
+
+### Шаг 6. Проверка HQ Guest
+
+PC-E → шлюз 
+
+![alt text](p7/s6/1.png)
+
+PC-E → S1
+
+![alt text](p7/s6/2.png)
+
+PC-E → PC-A
+
+![alt text](p7/s6/3.png)
+
+PC-E → PC-B
+
+![alt text](p7/s6/4.png)
+
+PC-E → PC-F
+
+![alt text](p7/s6/5.png)
+
+### Шаг 7. Проверка Branch Guest
+
+PC-G → шлюз 
+
+![alt text](p7/s7/1.png)
+
+PC-G → S3
+
+![alt text](p7/s7/2.png)
+
+PC-E → PC-F
+
+![alt text](p7/s7/3.png)
+
+PC-E → HQ 
+
+![alt text](p7/s7/4.png)
+
+
+### Шаг 8. Проверка Users
+
+PC-B → Management
+
+![alt text](p7/s8/1.png)
+
+PC-F → Branch
+
+![alt text](p7/s8/2.png)
+
+## Часть 8. Настройка NAT/PAT
+
+Логическая схема
+
+                    INTERNET
+                        |
+                       R3
+                        |
+         209.165.200.224/29
+                        |
+                       R1
+                NAT / PAT EDGE
+                   /         \
+                  /           \
+      209.165.200.229       209.165.200.230
+          Static NAT             PAT
+              |                   |
+            PC-A              остальные
+
+
+### Шаг 1. Внешний NAT-интерфейс
+
+![alt text](p8/s1/1.png)
+
+### Шаг 2. Внутренние NAT-интерфейсы 
+
+![alt text](p8/s2/1.png)
+
+### Шаг 3. ACL для адресов NAT
+
+![alt text](p8/s3/1.png)
+
+### Шаг 4. PAT через R1
+
+![alt text](p8/s4/1.png)
+
+### Шаг 5. Проверка PAT
+
+![alt text](p8/s5/2.png)
+
+![alt text](p8/s5/3.png)
+
+![alt text](p8/s5/4.png)
+
+![alt text](p8/s5/5.png)
+
+![alt text](p8/s5/6.png)
+
+### Шаг 6. Static NAT для PC-A
+
+![alt text](p8/s6/1.png)
+
+![alt text](p8/s6/2.png)
+
+![alt text](p8/s6/3.png)
+
+![alt text](p8/s6/4.png)

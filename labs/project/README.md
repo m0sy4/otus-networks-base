@@ -522,3 +522,131 @@ PC-F → Branch
 ![alt text](p8/s6/3.png)
 
 ![alt text](p8/s6/4.png)
+
+## Часть 9. Настройка и проверка CDP и LLDP
+
+### Шаг 1. Проверка работы CDP на роутерах и маршрутизаторах
+
+![alt text](p9/s1/1.png)
+
+![alt text](p9/s1/2.png)
+
+![alt text](p9/s1/3.png)
+
+![alt text](p9/s1/4.png)
+
+![alt text](p9/s1/5.png)
+
+### Шаг 2. Отключение CDP на всех устройствах для проверки LLDP
+
+Отключение командой no cdp run
+
+![alt text](p9/s2/1.png)
+
+Аналогично на других устройствах
+
+### Шаг 3. Проверка LLDP 
+
+Командой lldp run запускаем LLDP на всех устройствах
+
+Проверяем
+
+![alt text](p9/s3/1.png)
+
+![alt text](p9/s3/2.png)
+
+![alt text](p9/s3/3.png)
+
+![alt text](p9/s3/4.png)
+
+![alt text](p9/s3/5.png)
+
+## Часть 10. Настройка NTP 
+
+Схема NTP
+
+                           R1
+                     NTP MASTER
+                      Stratum 4
+                    /     |      \
+                   /      |       \
+                 S1       S2       R2
+                                    \
+                                     \
+                                      S3
+
+### Шаг 1. Проверка и настройка R1 как NTP Master
+
+![alt text](p10/s1/1.png)
+
+### Шаг 2. Настройка клиентов
+
+![alt text](p10/s2/1.png)
+
+![alt text](p10/s2/2.png)
+
+![alt text](p10/s2/3.png)
+
+![alt text](p10/s2/4.png)
+
+### Шаг 3. Проверка работы NTP
+
+![alt text](p10/s3/1.png)
+
+![alt text](p10/s3/2.png)
+
+![alt text](p10/s3/3.png)
+
+![alt text](p10/s3/4.png)
+
+## Часть 11. Защищённое удалённое управление (SSH)
+
+Username:    SSHadmin \
+Password:    cisco123 \
+Domain:      lab.com \
+SSH version: 2 \
+RSA:         1024 bit
+
+### Шаг 1. Настройка SSH на R1/2 и S1/2/3
+
+![alt text](p11/s1/1.png)
+
+![alt text](p11/s1/2.png)
+
+![alt text](p11/s1/3.png)
+
+![alt text](p11/s1/4.png)
+
+![alt text](p11/s1/5.png)
+
+### Шаг 2. Ограничение SSH административной сетью  
+
+![alt text](p11/s2/1.png)
+
+![alt text](p11/s2/2.png)
+
+![alt text](p11/s2/3.png)
+
+![alt text](p11/s2/4.png)
+
+### Шаг 3. Проверка SSH и ограничений
+
+PC-A (VLAN 20 - Административный)
+
+![alt text](p11/s3/1.png)
+
+![alt text](p11/s3/2.png)
+
+![alt text](p11/s3/3.png)
+
+PC-B (VLAN 30)
+
+![alt text](p11/s3/4.png)
+
+PC-F (VLAN 120)
+
+![alt text](p11/s3/5.png)
+
+PC-E (VLAN 40)
+
+![alt text](p11/s3/6.png)

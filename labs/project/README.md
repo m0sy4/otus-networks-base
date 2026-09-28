@@ -303,27 +303,34 @@ VLAN120 → VLAN140
 ### Шаг 5. Настройка SLAAC на ПК
 
 PC-B
+
 ![alt text](p5/s5/1.png)
 
 
 PC-C
+
 ![alt text](p5/s5/2.png)
 
 PC-E
+
 ![alt text](p5/s5/3.png)
 
 PC-G
+
 ![alt text](p5/s5/4.png)
 
 ### Шаг 6. Настройка DHCPv6 на ПК
 
 PC-A
+
 ![alt text](p5/s6/1.png)
 
 PC-D 
+
 ![alt text](p5/s6/2.png)
 
 PC-F 
+
 ![alt text](p5/s6/3.png)
 
 ### Шаг 7. Проверка DHCPv6 на маршрутизаторах
